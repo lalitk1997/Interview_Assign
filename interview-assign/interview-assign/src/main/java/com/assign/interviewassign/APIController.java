@@ -16,7 +16,6 @@ public class APIController {
     private RestTemplate restTemplate;
     @Autowired
     private APIServiceImpl apiService;
-
     @GetMapping("/categories")
     public List<ResultDTO> getCategories(@RequestParam String category) {
         String url = String.format("https://api.publicapis.org/entries?category=%s", category);
@@ -28,7 +27,6 @@ public class APIController {
 		}
         return list;
     }
-
     @PostMapping("/save")
     public ResponseEntity<String> saveEntries(@RequestBody APIEntity apiEntity){
         try{
